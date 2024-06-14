@@ -127,7 +127,8 @@ static ssize_t device_write(struct file *filep, const char *buffer, size_t len, 
             instrucao_wbr(command[1], command[2], command[3]);
             break;
         case 1:
-            instrucao_wbr_sprite(command[1], command[2], command[3], command[4], command[5]);
+	    printk("NUMERO X: %d", (int) command[3]);
+            instrucao_wbr_sprite((int) command[1], (int)command[2], (int)command[3], (int)command[4], (int)command[5]);
             break;
         case 2:
             instrucao_wbm(command[1], command[2], command[3], command[4]);
